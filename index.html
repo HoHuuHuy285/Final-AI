@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports Person Classifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <nav class="bg-gradient-to-r from-cyan-500 to-blue-500 text-center py-4">
+      <a href="#">Sports Person Classifier</a>
+    </nav>
+
+    <div class="container mx-auto">
+      <div class="flex">
+        <div class="flex-auto card-wrapper" data-player="lionel_messi">
+          <div class="card border-0">
+            <div
+              class="position-relative overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Messi.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Lionel Messi</h4>
+            </div>
+          </div>
+        </div>
+        <div class="flex-auto card-wrapper" data-player="maria_sharapova">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/maria_sharapova.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Maria Sharapova</h4>
+            </div>
+          </div>
+        </div>
+        <div class="flex-auto card-wrapper" data-player="roger_federer">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Roger_Federer.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Roger Federer</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-auto card-wrapper" data-player="serena_williams">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Serena_Williams.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Serena Williams</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-auto card-wrapper" data-player="Novak_Djokovic">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="images/Novak_Djokovic.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Novak Djokovic</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex mx-10">
+        <div>
+          <div class="flex">
+            <div class="mx-auto">
+              <label
+                for="dropzone-file"
+                class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer px-5"
+              >
+                <form action="/file-upload" class="dropzone" id="dropzone">
+                  <div class="dz-message needsclick text-center">
+                    <img
+                      class="inline"
+                      src="./images/upload.png"
+                      width="50vw"
+                      height="50vw"
+                    /><br />
+                    <span class="note needsclick"
+                      >Drop files here or click to upload</span
+                    >
+                  </div>
+                </form>
+              </label>
+            </div>
+          </div>
+          <div class="flex mt-3">
+            <div class="mx-auto">
+              <button
+                id="submitBtn"
+                type="button"
+                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Classify
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="error" id="error">
+          <p>
+            Can't classify image. Classifier was not able to detect face and two
+            eyes properly
+          </p>
+        </div>
+
+        <div id="resultHolder"></div>
+        <div id="divClassTable">
+          <table id="classTable">
+            <tr>
+              <th>Player</th>
+              <th>Probability Score</th>
+            </tr>
+            <tr>
+              <td>Leonel Messi</td>
+              <td id="score_lionel_messi"></td>
+            </tr>
+            <tr>
+              <td>Maria Sharapova</td>
+              <td id="score_maria_sharapova"></td>
+            </tr>
+            <tr>
+              <td>Rodger Federer</td>
+              <td id="score_roger_federer"></td>
+            </tr>
+            <tr>
+              <td>Serena Williams</td>
+              <td id="score_serena_williams"></td>
+            </tr>
+            <tr>
+              <td>Virat Kohli</td>
+              <td id="score_virat_kohli"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./dropzone.min.js"></script>
+  <script src="./app.js"></script>
+</html>
